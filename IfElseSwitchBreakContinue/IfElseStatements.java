@@ -16,7 +16,7 @@ public class IfElseStatements {
 		if (num == 5) {
 			System.out.println("Number is 5");
 		}
-		System.out.println("After the if");
+		System.out.println("After the if.");
 		
 		/* When you have a if and an else. The if part will execute
 		when the condition is true and the else part will execute
@@ -74,7 +74,7 @@ public class IfElseStatements {
 }
 /** OUTPUT
 Number is 5
-After the if
+After the if.
 Number is under 10
 Well done!
 Grade is C
