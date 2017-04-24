@@ -22,11 +22,3 @@ Number of lives 3
 Number of lives 2
 Number of lives 1
 */
-
-
-
-
-
-
-
-

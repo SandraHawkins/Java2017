@@ -23,10 +23,3 @@ class Ex5HeightBreadth {
 		}
 	}
 }
-
-
-
-
-
-
-
