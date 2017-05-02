@@ -1,3 +1,5 @@
+package sheet1VariablesAndOperators;
+
 public class Ex2VarsAndOperators {
 	/* 
 		= is the assignment operator. It is read from right to left.

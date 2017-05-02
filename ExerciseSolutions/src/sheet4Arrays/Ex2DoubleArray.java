@@ -1,3 +1,5 @@
+package sheet4Arrays;
+
 import java.util.Scanner;
 
 public class Ex2DoubleArray {

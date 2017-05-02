@@ -1,3 +1,5 @@
+package sheet3ControlFlow;
+
 public class Ex6TotallingFromConsole {
 
 	public static void main(String [] args) {

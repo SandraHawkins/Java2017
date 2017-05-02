@@ -1,3 +1,5 @@
+package sheet3ControlFlow;
+
 import java.util.Scanner;
 
 public class Ex7Total10Values {

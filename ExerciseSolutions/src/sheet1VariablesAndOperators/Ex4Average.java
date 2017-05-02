@@ -1,3 +1,5 @@
+package sheet1VariablesAndOperators;
+
 /* 
  When the following operators are on the same line: * / - + there are 
  operator precedence rules. I.e. / and * will happen before + and -.
