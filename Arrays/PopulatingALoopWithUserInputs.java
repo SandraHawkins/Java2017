@@ -9,20 +9,24 @@ public class PopulatingALoopWithUserInputs {
 		/* Prompt the user */
 		System.out.print("How many names do you want in the array? ");
 		/* Get the size from the user */
-		int size = input.nextInt(); // 6
+		int size = input.nextInt(); 
 		
-		System.out.println("The size of the array will be " + size); // 6
+		System.out.println("The size of the array will be " + size); 
 		
 		/* Sets up a String array in memory with the size that the
 		user wants */
 		String [] names = new String[size]; 
-		// names--> [null][null][null][null][null][null]
-		
+		/* If the user entered 5 for the size of the array, here is how
+		 * the array will look in memory. N.B. null is the default value 
+		 * for a String. 
+		 * 
+		 * 		names--> [null][null][null][null][null]
+		 */		
 		/* Loops through the array and populates  */
 		for (int i = 0; i < names.length; i++) {
 			/* Prompt */
-			System.out.print("Please enter name: ");
-			/* Reads in a String from the user and stores it in name */
+			System.out.print("Please enter a name: ");
+			/* Reads in a String from the user and stores it in 'name' */
 			String name = input.next();
 			/* Populates an element in the array with the name entered
 			by the user */
