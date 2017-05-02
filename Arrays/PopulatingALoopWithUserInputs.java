@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PopulatingWithUserInputs {
+public class PopulatingALoopWithUserInputs {
 
 	public static void main(String [] args) {
 		/* Declare an instance of the Scanner class so that I can 
