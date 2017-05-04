@@ -1,0 +1,20 @@
+package sheet3ControlFlow;
+
+import java.util.Scanner;
+
+public class Ex9IfElseStatements {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+	
+		System.out.print("Please enter an integer: ");
+		int num = scanner.nextInt();
+		
+		System.out.println("You entered " + num);	
+		
+		
+		/* Close the scanner instance */
+		scanner.close();
+	}
+}

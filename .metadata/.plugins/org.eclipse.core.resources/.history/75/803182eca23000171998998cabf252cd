@@ -1,0 +1,48 @@
+package sheet3ControlFlow;
+
+import java.util.Scanner;
+
+public class Ex12ExamMarks {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter result for first exam: ");
+		int exam1 = scanner.nextInt();
+		System.out.print("Enter result for second exam: ");
+		int exam2 = scanner.nextInt();
+		System.out.print("Enter result for third exam: ");
+		int exam3 = scanner.nextInt();
+		
+		Ex12ExamMarks ex12 = new Ex12ExamMarks();
+		
+		scanner.close();
+	}
+	/* exam1 = 40   exam2 = 40	exam3 = 40 */
+	public void calculateResult(int exam1, int exam2, int exam3) {
+		int numOfPasses = 0;
+		
+		if (exam1 >= 40) 		
+			numOfPasses++;  
+		if (exam2 >= 40)	
+			numOfPasses++;
+		if (exam3 >= 40)	
+			numOfPasses++;
+		
+		/*
+		 * NumOfPasses = 0			Fail
+		 * NumOfPasses = 1			Fail
+		 * NumOfPasses = 2			Get the average
+		 * 						    >= 50 Pass
+		 * 							< 50 Fail
+		 * NumOfPasses = 3			Pass 
+		 */
+		if (numOfPasses == 0 || numOfPasses == 1) {
+			System.out.println("Fail");
+		} else if (numOfPasses == 2) {
+			double average = (exam1 + exam2 + exam3) / 3.0;
+			
+		}
+	}
+
+}

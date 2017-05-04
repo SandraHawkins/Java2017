@@ -1,0 +1,19 @@
+package sheet3ControlFlow;
+
+public class Ex10Floats {
+
+	public static void main(String[] args) {
+		
+		float num1 = 10;
+		float num2 = 13;
+		float num3 = 12;
+	}
+	
+	public void sameOrDifferent(float a, float b, float c) {
+		if (a == b && b == c)
+			System.out.println("All numbers are the same");
+		
+		if (a != b && b != c)
+			System.out.println("All numbers are different");
+	}
+}

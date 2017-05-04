@@ -1,0 +1,15 @@
+package sheet3ControlFlow;
+
+public class Ex13TotalTwoDice {
+
+	public static void main(String[] args) {
+		
+		int dice1 = (int)(Math.random() * 6) + 1;
+		int dice2 = (int)(Math.random() * 6) + 1;
+		
+		System.out.printf("Dice 1: %d\nDice 2: %d", dice1, dice2);
+		
+
+	}
+
+}

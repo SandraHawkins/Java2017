@@ -1,0 +1,11 @@
+
+public class Nosy {
+
+	public static void main(String[] args) {
+
+
+		Long myLong = new Long(Long.MAX_VALUE);
+		System.out.println(myLong);  // 9223372036854775807
+
+	}
+}

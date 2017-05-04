@@ -1,0 +1,16 @@
+package sheet3ControlFlow;
+
+import java.util.Scanner;
+
+public class Ex8RandomNumberOfInputs {
+	
+public static void main(String[] args) {
+		
+Scanner scanner = new Scanner(System.in);
+		
+		
+do {
+			
+} while (1 != -1);
+	}
+}

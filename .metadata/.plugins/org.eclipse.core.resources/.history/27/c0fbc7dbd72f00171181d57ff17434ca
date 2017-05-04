@@ -1,0 +1,35 @@
+package sheet4Arrays;
+
+public class Ex3SumOfTwoArrays {
+
+	public static void main(String[] args) {
+		
+		int [] array1 = {2, 4, 6, 8, 10, 12, 14, 16};
+		int [] array2 = {1, 2, 3, 4, 5, 6, 7, 8};
+		
+		Ex3SumOfTwoArrays ex3 = new Ex3SumOfTwoArrays();
+		ex3.printMyArray(array1);
+		ex3.printMyArray(array2);
+		ex3.sumOfTwoArrays(array1, array2);
+	}
+	
+	public void sumOfTwoArrays(int [] array1, int [] array2) {
+		
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print(array1[i] + "\t");
+			
+		}
+	}
+	
+	/*
+	 * This method will print the contents of any array passed
+	 * to it.
+	 */
+	public void printMyArray(int [] myArray) {
+		for (int i = 0; i < myArray.length; i++) {
+			System.out.print(myArray[i] + " ");
+		}
+		System.out.println(); // prints a newline after the loop
+	}
+
+}

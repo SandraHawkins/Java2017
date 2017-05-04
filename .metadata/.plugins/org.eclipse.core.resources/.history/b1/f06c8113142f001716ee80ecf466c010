@@ -1,0 +1,23 @@
+package sheet3ControlFlow;
+
+import java.util.Scanner;
+
+public class Ex8RandomNumberOfInputs {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		int num = 0;
+		int total = 0;
+		
+		do {
+			System.out.print("Please type an integer : ");
+			
+			total = total + num;
+			num = scanner.nextInt();
+			
+		} while (num != -1);
+		
+		System.out.println("The total is " + total);
+	}
+}
