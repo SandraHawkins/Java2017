@@ -37,3 +37,4 @@ Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to download.ecl
 	... 13 common frames omitted
 2017-05-03 08:43:01,614 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2017-05-04 08:30:14,420 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-05-05 10:36:41,391 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
