@@ -24,7 +24,6 @@ public class ThreeDArray {
 		System.out.println(bigArray1[0][0].length); // 4
 		System.out.println(bigArray1[0][0][0]);	    // 2
 		
-						
 		int [][][] bigArray = {
 				// bigArray[0][0]  bigArray[0][1]    
 				// 0 1    0 1 2
@@ -40,9 +39,7 @@ public class ThreeDArray {
 		bigArray[2][0][1] = 33;
 		bigArray[1][2] = new int [] {11, 11, 11, 11};
 		
-		// The next two line have gotten rid of {3,4,5} from
-		// bigArray[0]
-		// bigArray[0] = [null]
+		/* The next two lines have gotten rid of {3,4,5} from bigArray[0] */
 		bigArray[0] = new int [1][];
 		bigArray[0][0] = new int []{1,2};
 		
@@ -55,10 +52,11 @@ public class ThreeDArray {
 		System.out.println(bigArray[1][1].length);   // 4
 		System.out.println(bigArray[2].length);      // 2
 		
-		// Cannot mix datatypes in an array
+		/* You cannot mix datatypes in an array */
 		//bigArray[1][1] = new byte[] {1, 2, 3};
 		//bigArray[1][1] = new char[] {'a', 'b', 'c'};
 		
+		/* The 'old' loops to print the contents of the 3D array */
 		System.out.println("***************");
 		for (int i = 0; i < bigArray.length; i++) {
 			for (int j = 0; j < bigArray[i].length; j++) {
@@ -70,6 +68,7 @@ public class ThreeDArray {
 			System.out.println();
 		}
 		
+		/* The enhanced for loop to print the contents of the 3D array */
 		System.out.println("***************");
 		for (int [][] twoD : bigArray) {
 			for(int [] oneD : twoD) {
@@ -82,3 +81,22 @@ public class ThreeDArray {
 		}
 	}
 }
+/** OUTPUT
+2
+4
+4
+0
+8
+14
+3
+4
+2
+***************
+1 2 	
+6 	7 8 9 10 	11 11 11 11 	
+12 33 14 	15 16 	
+***************
+1 2 	
+6 	7 8 9 10 	11 11 11 11 	
+12 33 14 	15 16 	
+*/

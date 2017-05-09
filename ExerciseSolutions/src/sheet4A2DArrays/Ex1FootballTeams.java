@@ -36,6 +36,7 @@ public class Ex1FootballTeams {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter a team to print its players: ");
 		String teamName = scanner.nextLine();
+		scanner.close();
 		
 		for (int i = 0; i < teams.length; i++) {
 			/* When j starts at one, the first element in the array
