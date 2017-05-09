@@ -1,4 +1,4 @@
-public class EnhancedForLoop {
+public class EnhancedForLoop1DArray {
 
 	public static void main(String[] args) {
 		int [] nums = {1, 5, 3, 7, 9};
