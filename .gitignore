@@ -6,3 +6,7 @@
 
 .metadata
 .recommenders
+*.class
+/bin/
+.classpath
+.project
