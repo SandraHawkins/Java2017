@@ -4,10 +4,12 @@
 
 ########################################################################
 
+.classpath
 .metadata
+.project
 .recommenders
+.settings
+
 *.class
 /bin/
-.classpath
-.project
 /SandraTestingStuff
