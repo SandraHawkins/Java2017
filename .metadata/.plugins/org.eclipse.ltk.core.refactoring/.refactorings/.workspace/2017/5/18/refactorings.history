@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;IfElseSwitchBreakContinue&apos; to &apos;ControlFlow&apos;&#x0D;&#x0A;- Original element: &apos;IfElseSwitchBreakContinue&apos;&#x0D;&#x0A;- Renamed element: &apos;IfElseSwitchBreakContinue&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;IfElseSwitchBreakContinue&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=IfElseSwitchBreakContinue" name="ControlFlow" references="true" stamp="1493901618277" version="1.0"/>
-</session>
