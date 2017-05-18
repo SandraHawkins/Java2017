@@ -1,8 +1,9 @@
-########################################################################
+##############################################
 
-	Files for git to ignore. I.e. they won't be tracked or committed
+	Files for git to ignore. I.e. they 
+	won't be tracked or 	committed
 
-########################################################################
+##############################################
 
 .classpath
 .metadata
