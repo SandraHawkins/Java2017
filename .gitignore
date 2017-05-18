@@ -5,12 +5,14 @@
 
 ##############################################
 
+# Ignore all eclipse setting files
 .classpath
 .metadata
 .project
 .recommenders
 .settings
 
+# ignore all .class files and the bin folder
 *.class
 /bin/
 /SandraTestingStuff
