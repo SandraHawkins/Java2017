@@ -1,9 +1,9 @@
-##############################################
-#										     #
-#	Files for git to ignore. I.e. they       #
-#	won't be tracked or 	committed        #
-#											 #
-##############################################
+#################################################
+#                                               #
+#	Files for git to ignore. I.e. they      #
+#	won't be tracked or 	committed       #
+#                                               #
+#################################################
 
 # Ignore all eclipse setting files
 .classpath
@@ -15,4 +15,6 @@
 # ignore all .class files and the bin folder
 *.class
 /bin/
+
+# My folder for testing things
 /SandraTestingStuff
