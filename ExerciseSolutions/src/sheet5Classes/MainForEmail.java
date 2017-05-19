@@ -19,5 +19,9 @@ public class MainForEmail {
 		
 		EmailAccount account3 = new EmailAccount("me@me.com", "abcdef", 10000);
 		System.out.println(account3);
+		
+		EmailAccount account4 = new EmailAccount("another@hotmail.com", 
+				"123abc", EmailAccount.STORAGE_500_GB);
+		System.out.println(account4);
 	}
 }
