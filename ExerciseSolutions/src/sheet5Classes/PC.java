@@ -151,6 +151,10 @@ public class PC extends Object {
 	}
 
 	public double calculateCost() {
+		// if this method is called multiple times, make sure to reset
+		// the cost to the base price each time
+		cost = 350;
+		
 		if (ram == RAM_8_GB)
 			cost += 20;
 		else if (ram == RAM_16_GB)
