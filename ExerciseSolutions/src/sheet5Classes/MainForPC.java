@@ -5,9 +5,6 @@
  */ 
 package sheet5Classes;
 
-import javafx.print.PrintColor;
-import sheet5Classes.PC.MonitorSize;
-
 public class MainForPC {
 
 	public static void main(String[] args) {
@@ -22,11 +19,16 @@ public class MainForPC {
 		/* No-args constructor, defaults will be set */
 		PC pc1 = new PC();
 		
-		/* All invalid values, defaults will be set */
+		/* The following line contains invalid values, therefore defaults
+		 * will be set. 
+		 * 
+		 * To access an enum outside of the class where it's declared, you 
+		 * use the className.EnumName.EnumValue
+		 * */
 		PC pc2 = new PC(10, 10, "Yes please", PC.MonitorSize.MONITOR_22);
 		
 		PC pc3 = new PC(PC.RAM_16_GB, PC.HARD_DRIVE_2_TB, PC.OS_LINUX, 
-				        MonitorSize.MONITOR_46);
+				        PC.MonitorSize.MONITOR_46);
 		
 		PC pc4 = new PC();
 		pc4.setRam(PC.RAM_8_GB);
@@ -36,7 +38,6 @@ public class MainForPC {
 		PC [] allPcs = {pc1, pc2, pc3, pc4};
 		
 		printPCArray(allPcs);
-		
 	}
 	
 	/* This method take in an array of PC objects, loops through them
