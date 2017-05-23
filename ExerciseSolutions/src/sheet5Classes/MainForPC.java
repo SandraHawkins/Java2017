@@ -46,6 +46,6 @@ public class MainForPC {
 	public static void printPCArray(PC [] arrayOfPCs) {
 		/* Loop through and call the toString on each */
 		for (PC onePc : arrayOfPCs)
-			System.out.println(onePc);  // one.toString()
+			System.out.println(onePc);  // onePc.toString()
 	}
 }
