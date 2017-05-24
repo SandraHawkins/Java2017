@@ -20,7 +20,6 @@ public class Ex1SearchingSortingAnArray {
 		ex1.findSmallestElement(nums);
 		ex1.findLargestElement(nums);
 		ex1.searchArray(nums, 5);
-		System.out.println("Sorting......");
 		ex1.sortArray(nums);
 		ex1.printMyArray(nums);
 
@@ -42,33 +41,68 @@ public class Ex1SearchingSortingAnArray {
 		/* If a negative number is returned, then the number was 
 		 * not found.If */		
 		System.out.println(foundAtPosition < 0 ? 
-				"Not found" : "5 found at " + foundAtPosition);
+				"5 Not found" : "5 found at " + foundAtPosition);
 	}
 
+	/**
+	 * This method sorts the array from smallest to largest, it uses the 
+	 * selection sorting algorithm. The selection sort works as follows: 
+	 * you look through the entire array for the smallest element, once 
+	 * you find it you swap it (the smallest element) with the first 
+	 * element of the array. Then you look for the smallest element in 
+	 * the remaining array (an array without the first element) and swap
+	 * it with the second element. Then you look for the smallest element 
+	 * in the remaining array (an array without first and second elements) 
+	 * and swap it with the third element, and so on. 
+	 */
 	public void sortArray(int [] nums) {
+		System.out.println("Sorting the array.....");
 		//      {8, 9, 3, 10, 4, 1, 7, 9, 2, 5, 4}
 		// i     0    
 		// j        1
 		// smallest = 1			position = 0
 
+		/* This loop runs once through the whole array */
 		for (int i = 0; i < nums.length; i++) {
-			int position = i;
-			int smallest = nums[i];
+			int position = i;		// The position where the smallest is found
+			int smallest = nums[i]; // The smallest starts at the first element
+			// next time into the loop, it will be assigned the second element,
+			// and so on. 
 
+			/* This loop on its:
+			 * - 1st go, will loop from the 2nd element to the end
+			 * - 2nd go, will loop from the 3rd element to the end
+			 * */ 
 			for (int j = i + 1; j < nums.length; j++) {
 
+				/* See if the current element is smaller than the previous,
+				 * if it is then save the element's value and the position 
+				 * it was found at */
 				if (nums[j] < smallest) {
 					smallest = nums[j];
 					position = j;
 				}
 			}
-			int temp = nums[i];
-			nums[i] = smallest;
-			nums[position] = temp;
+			/* Swap the smallest into the 1st position (the 1st time through
+			 * the outer loop), into the 2nd position (the 2nd time through 
+			 * the outer loop), and so on. */
+			int temp = nums[i];			// Store the (1st) number in temp
+			nums[i] = smallest;			// The smallest number goes into position (1)
+			nums[position] = temp;		// Where the smallest number was, 
+										// put temp in there (the 1st number)
 		}
 	}
 
+	/**
+	 * This method takes in an array to search in and a value to search for.
+	 * When the the element is found, it prints out the position it was found
+	 * at and exits the loop.
+	 */
 	public void searchArray(int [] nums, int value) {
+		System.out.println("Search in the array for " + value);
+		
+		boolean isFound = false;
+		
 		/* Loop through the whole array */
 		for (int i = 0; i < nums.length; i++) {
 			/* When a match is found */
@@ -76,13 +110,21 @@ public class Ex1SearchingSortingAnArray {
 				/* Using 'i' I can print the position that the value
 				 * is found at, and exit the loop afterwards */
 				System.out.printf("%d found at position %d\n", value, i + 1);
+				
+				isFound = true;
 				/* Exits the loop after the first match is found  */
 				break;
 			}
 		}
+		if (!isFound)
+			System.out.println(value + " not found in the array");
 	}
 
+	/**
+	 * This method loops through the array, looking for the largest element.
+	 */
 	public void findLargestElement(int [] nums) {
+		
 		if (nums.length != 0) {
 			int largest = nums[0];
 			int positionFound = 0;
@@ -104,7 +146,11 @@ public class Ex1SearchingSortingAnArray {
 		}
 	}
 
+	/**
+	 * This method loops through the array, looking for the smallest element.
+	 */
 	public void findSmallestElement(int [] nums) {
+		
 		/* If the array is not empty, search for the smallest */
 		if (nums.length != 0) {
 			int smallest = nums[0];
@@ -121,7 +167,12 @@ public class Ex1SearchingSortingAnArray {
 		}
 	}
 
+	/**
+	 * This method loops through the array and populates it with
+	 * random numbers retrieved from the Random classes .nextInt() method.
+	 */
 	public void populateArrayWithRandomNumbers(int [] nums) {
+		System.out.println("Populating the array......");
 		/* Creates an instance of the Random class, so that I can 
 		 * use it to generate random ints by calling .nextInt()
 		 * on the instance. */
@@ -134,10 +185,31 @@ public class Ex1SearchingSortingAnArray {
 		}
 	}
 
+	/**
+	 * Prints the content of the int array passed in. For example:
+	 * 
+	 * 			3 5 17 6 20 8 12 6 11 11 
+	 */
 	public void printMyArray(int [] nums) {
+		System.out.println("Printing the array.....");
 		for (int num : nums) {
 			System.out.print(num + " ");
 		}
 		System.out.println();
 	}
 }
+/** POSSIBLE OUTPUT
+Populating the array......
+Printing the array.....
+1 20 7 19 14 14 7 19 8 3 
+The smallest element is 1
+The largest element is 20 at position 2
+Search in the array for 5
+5 not found in the array
+Sorting the array.....
+Printing the array.....
+1 3 7 7 8 14 14 19 19 20 
+Printing the array.....
+1 3 7 7 8 14 14 19 19 20 
+5 Not found
+*/

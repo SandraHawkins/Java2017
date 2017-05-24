@@ -94,6 +94,7 @@ public class Car /*extends Object*/ {
 			case "Mercedes":
 			case "Volkswagen":
 			case "Opel":
+			case "Range Rover":
 				this.make = make;
 				break;
 			default:
@@ -107,7 +108,7 @@ public class Car /*extends Object*/ {
 	}
 	
 	public void setEngineSize(double size) {
-		if (size >= 1 && size <= 2.3)
+		if (size >= 1 && size <= 2.4)
 			this.engineSize = size;
 		else 
 			System.out.println(size + " is not a valid engine size");
@@ -125,7 +126,6 @@ public class Car /*extends Object*/ {
 		return engineSize;
 	}
 
-	
 	/* toString(). It's recommended that you replace/ override the 
 	 * toString() from the object class.  If you print a reference
 	 * variable e.g. System.out.println(c2); and haven't overridden 

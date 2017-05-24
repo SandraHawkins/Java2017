@@ -47,15 +47,15 @@ public class PC_WithEnums extends Object {
 	 * An enum can be declared inside a class, e.g. inside the curly 
 	 * brackets of PC or in a file of its own.
 	 **/
-	enum RamSize {
+	public enum RamSize {
 		RAM_4_GB, RAM_8_GB, RAM_16_GB
 	}
 	
-	enum HardDrive {
+	public enum HardDrive {
 		HARD_DRIVE_500_GB, HARD_DRIVE_1_TB, HARD_DRIVE_2_TB
 	}
 	
-	enum OperatingSystem {
+	public enum OperatingSystem {
 		LINUX, SOLARIS, MAC_LEOPARD, WINDOWS_7, WINDOWS_10
 	}
 	
