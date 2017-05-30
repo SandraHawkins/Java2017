@@ -4,9 +4,9 @@
  * ExerciseSolutions/sheet9Inheritance/MainForFurniture.java
  */ 
 
-package sheet9Inheritance;
+package sheet9Furniture;
 
-import sheet9Inheritance.Furniture.Colour;
+import sheet9Furniture.Furniture.Colour;
 
 class MainForFurniture {
 

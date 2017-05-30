@@ -4,7 +4,7 @@
  * ExerciseSolutions/sheet9Inheritance/Bed.java
  */ 
 
-package sheet9Inheritance;
+package sheet9Furniture;
 
 public class Bed extends Furniture {
 	

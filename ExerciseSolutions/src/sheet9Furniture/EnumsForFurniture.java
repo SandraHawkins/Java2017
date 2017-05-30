@@ -4,7 +4,7 @@
  * ExerciseSolutions/sheet9Inheritance/EnumsForFurniture.java
  */ 
 
-package sheet9Inheritance;
+package sheet9Furniture;
 
 /*
  * Cannot be public because it would have to be in a file of the same

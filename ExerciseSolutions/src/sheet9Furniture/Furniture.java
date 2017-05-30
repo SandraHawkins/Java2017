@@ -4,7 +4,7 @@
  * ExerciseSolutions/sheet9Inheritance/Furniture.java
  */ 
 
-package sheet9Inheritance;
+package sheet9Furniture;
 
 /**
  * This class exists at the top of the hierarchy to provide common 

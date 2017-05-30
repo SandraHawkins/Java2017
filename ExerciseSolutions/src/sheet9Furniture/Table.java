@@ -4,7 +4,7 @@
  * ExerciseSolutions/sheet9Inheritance/Table.java
  */ 
 
-package sheet9Inheritance;
+package sheet9Furniture;
 
 public class Table extends Furniture {
 	

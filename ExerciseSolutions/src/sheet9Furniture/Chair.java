@@ -4,7 +4,7 @@
  * ExerciseSolutions/sheet9Inheritance/Chair.java
  */ 
 
-package sheet9Inheritance;
+package sheet9Furniture;
 
 public class Chair extends Furniture {
 	
