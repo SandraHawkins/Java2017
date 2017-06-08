@@ -1,0 +1,4 @@
+Hello
+It's Thursday
+
+Last line in the file.

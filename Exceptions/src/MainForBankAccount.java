@@ -21,11 +21,16 @@ public class MainForBankAccount {
 		
 		try {
 			b1.withdraw(400);  // 300
-			b1.withdraw(400);  // Pow!
+			b1.withdraw(400);  // Exception occurs!
+			// When an exception occurs, the following will NOT execute,
+			// because execution will jump to the catch.
+			System.out.println("New balance " + b1.getBalance());
+			
 		} catch (CannotBeOverdrawnException e) {
 			System.out.println("Opps, not enough money");
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("MESSAGE: " + e.getMessage());
 		}
-		System.out.println("New balance " + b1.getBalance());
+		System.out.println("New balance " + b1.getBalance()); // will execute
 	}
 }
