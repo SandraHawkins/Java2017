@@ -4,7 +4,7 @@ public class GetRandomName {
 
 	public static void main(String[] args) {
 		
-		String [] names = {"Janosh", "Ben", "James", "Asen", "Ewelina", "Damien",
+		String [] names = {"Janos", "Ben", "James", "Asen", "Ewelina", "Damien",
 				"Agnes", "Gabriela", "Stephen", "Emmanuel", "Seán", "Pat", "Luca",
 				"Vitalie", "Darius", "Jay", "Shane", "Kevin"};
 		
