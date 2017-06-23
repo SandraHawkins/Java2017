@@ -18,3 +18,9 @@
 
 # My folder for testing things
 /SandraTestingStuff
+/GUIs/MyCalculator/nbproject/private/
+/GUIs/MyCalculator/build/
+/GUIs/SandrasCafe/nbproject/private/
+/GUIs/SandrasCafe/build/
+/GUIs/WritingToFile/nbproject/private/
+/GUIs/WritingToFile/build/
