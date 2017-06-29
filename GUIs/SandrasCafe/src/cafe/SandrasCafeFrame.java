@@ -15,6 +15,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.swing.ButtonModel;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
@@ -54,6 +56,14 @@ public class SandrasCafeFrame extends javax.swing.JFrame {
         rbCoke.setActionCommand("coke");
         rbOrange.setActionCommand("orange");
         rbWater.setActionCommand("water");   
+        
+        /* To get the panel on every frame, use the following code: */
+        this.getContentPane();  // returns a Panel
+        /* To get all the components in panel on this frame and loop through
+        them: */
+        for (Component c : this.getContentPane().getComponents()) {
+            
+        }
     }
 
     /**
@@ -203,6 +213,12 @@ public class SandrasCafeFrame extends javax.swing.JFrame {
             }
         });
 
+        lstOptions.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstOptions.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstOptionsValueChanged(evt);
+            }
+        });
         jScrollPane2.setViewportView(lstOptions);
 
         btnSaveToFile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -611,6 +627,12 @@ public class SandrasCafeFrame extends javax.swing.JFrame {
          else 
              appendToFile = false;
     }//GEN-LAST:event_fileWriteModeRadioButtonClicked
+
+    private void lstOptionsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstOptionsValueChanged
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>();
+        
+        cmbMealType.setModel(model);
+    }//GEN-LAST:event_lstOptionsValueChanged
 
     /**
      * @param args the command line arguments
