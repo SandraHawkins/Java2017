@@ -28,10 +28,8 @@
               <Component id="jLabel1" min="-2" pref="606" max="-2" attributes="0"/>
           </Group>
           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-              <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
-              <Component id="pnlAddressBookEntries" alignment="0" min="-2" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+          <Component id="pnlAddressBookEntries" alignment="0" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">

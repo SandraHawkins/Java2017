@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * VIEW
  */
 
 package addressbook;
@@ -19,7 +17,9 @@ public class AddressBookFrame extends javax.swing.JFrame {
 
     /* A reference to the ArrayList Manager class, that 
     can populate the ArrayList and return it to this frame */
-    private ArrayListManager manager = new ArrayListManager();
+    //private ArrayListManager manager = new ArrayListManager();
+    private DatabaseManager manager = new DatabaseManager();
+   
     /* A reference to the array list of address book 
     entries created in the ArrayListManager class */
     private ArrayList<AddressBookData> listOfData;
@@ -31,7 +31,7 @@ public class AddressBookFrame extends javax.swing.JFrame {
         initComponents();
         // That will use the method in the manager class
         // to fill up the ArrayList
-        manager.populateAddressBookList();
+        //manager.populateAddressBookList();
     }
 
     /**
