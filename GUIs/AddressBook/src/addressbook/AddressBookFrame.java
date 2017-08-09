@@ -1,7 +1,6 @@
 /*
  * VIEW
  */
-
 package addressbook;
 
 import java.awt.Component;
@@ -15,15 +14,16 @@ import javax.swing.JTextField;
  */
 public class AddressBookFrame extends javax.swing.JFrame {
 
-    /* A reference to the ArrayList Manager class, that 
-    can populate the ArrayList and return it to this frame */
+    /* A reference to the ArrayList Manager class, that
+     can populate the ArrayList and return it to this frame */
     //private ArrayListManager manager = new ArrayListManager();
     private DatabaseManager manager = new DatabaseManager();
-   
-    /* A reference to the array list of address book 
-    entries created in the ArrayListManager class */
-    private ArrayList<AddressBookData> listOfData;
-    
+
+    /* A reference to the array list of address book
+     entries created in the ArrayListManager class */
+    private ArrayList<AddressBookData> listOfData
+            = new ArrayList<>();
+
     /* The current position in the arraylist */
     private int position;
 
@@ -32,6 +32,7 @@ public class AddressBookFrame extends javax.swing.JFrame {
         // That will use the method in the manager class
         // to fill up the ArrayList
         //manager.populateAddressBookList();
+        btnSelectAll.doClick();
     }
 
     /**
@@ -134,6 +135,11 @@ public class AddressBookFrame extends javax.swing.JFrame {
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnSelectAll.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnSelectAll.setText("Select All");
@@ -339,9 +345,8 @@ public class AddressBookFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(pnlAddressBookEntries, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlAddressBookEntries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,153 +369,243 @@ public class AddressBookFrame extends javax.swing.JFrame {
         // the reference to the newly populated list and
         // assign that reference to the global variable
         listOfData = manager.getAllEntries();
-        
+
         // Set the list position to 0
         position = 0;
-        
+
         populateFields();
     }//GEN-LAST:event_btnSelectAllActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // Add one onto the position
         position += 1;
-        
-        // If the position reaches the end of the list, 
+
+        // If the position reaches the end of the list,
         // reset it to 0
         if (position >= listOfData.size()) {
             position = 0;
         }
-        
+
         populateFields();
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void populateFields() {
         if (listOfData == null || listOfData.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No records");
+            clearAllFields();
         } else {
-        
-        // Get the current element from the Arraylist
-        AddressBookData data = listOfData.get(position);
-        // Populate the textFields using the getters
-        // from data which is an AddressBookData object
-        txtId.setText(Integer.toString(data.getId()));
-        txtFirstName.setText(data.getFirstname());
-        txtLastName.setText(data.getLastname());
-        txtEmail.setText(data.getEmail());
-        txtPhoneNumber.setText(data.getPhoneNumber());
-        
-        // Update the label to reflect the current position in the list
-        lblCurrentRecord.setText(position + 1 + " of " +
-                                 listOfData.size());
+
+            // Get the current element from the Arraylist
+            AddressBookData data = listOfData.get(position);
+            // Populate the textFields using the getters
+            // from data which is an AddressBookData object
+            txtId.setText(Integer.toString(data.getId()));
+            txtFirstName.setText(data.getFirstname());
+            txtLastName.setText(data.getLastname());
+            txtEmail.setText(data.getEmail());
+            txtPhoneNumber.setText(data.getPhoneNumber());
+
+            // Update the label to reflect the current position in the list
+            lblCurrentRecord.setText(position + 1 + " of "
+                    + listOfData.size());
         }
     }
-    
+
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
-        
+
         position = 0;
-        
+
         populateFields();
     }//GEN-LAST:event_btnFirstActionPerformed
 
     private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
-        
+
         position--;
-        // If the position goes less than one, it is set 
+        // If the position goes less than one, it is set
         // to the last element in the list (i.e. size - 1)
         if (position < 0) {
             position = listOfData.size() - 1;
         }
-        
+
         populateFields();
     }//GEN-LAST:event_btnPreviousActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         /* listOfData gets populated from the searchByLastName
-        method in the Manager class. That method takes in a 
-        lastname from the textfield on the form and returns
-        an arraylist of address book entries that matches 
-        that last name. */
+         method in the Manager class. That method takes in a
+         lastname from the textfield on the form and returns
+         an arraylist of address book entries that matches
+         that last name. */
         listOfData = manager.searchByLastName(
-                     txtLastNameSearch.getText());
-        
+                txtLastNameSearch.getText());
+
         position = 0;
         populateFields();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnClearAllTextfieldsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearAllTextfieldsActionPerformed
-        // Clear the last name search textfields
-        txtLastNameSearch.setText("");
-        
-        // loop through the centre panel and clear all 
-        // textfields in it
-        for (Component com : pnlAddressBookEntries.getComponents()) {
-            if (com instanceof JTextField)
-                ((JTextField)com).setText("");
-        }
-        
-        // Clear the navigation label
-        lblCurrentRecord.setText("");
+        clearAllFields();
     }//GEN-LAST:event_btnClearAllTextfieldsActionPerformed
 
+    private void clearAllFields() {
+        // Clear the last name search textfields
+        txtLastNameSearch.setText("");
+
+        // loop through the centre panel and clear all
+        // textfields in it
+        for (Component com : pnlAddressBookEntries.getComponents()) {
+            if (com instanceof JTextField) {
+                ((JTextField) com).setText("");
+            }
+        }
+
+        // Clear the navigation label
+        lblCurrentRecord.setText("0 of 0");
+    }
+    
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         /* Check that none of the textfields are empty */
-        if (txtFirstName.getText().isEmpty() ||
-                txtLastName.getText().isEmpty() ||
-                txtEmail.getText().isEmpty() ||
-                txtPhoneNumber.getText().isEmpty()) {
-            
-            JOptionPane.showMessageDialog(this, 
+        if (txtFirstName.getText().isEmpty()
+                || txtLastName.getText().isEmpty()
+                || txtEmail.getText().isEmpty()
+                || txtPhoneNumber.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(this,
                     "You cannot have empty textfields");
+
+        } else if (txtFirstName.getText().length() > 50) {
+            JOptionPane.showMessageDialog(this,
+                    "Firstname must be 50 characters or under");
+            // requestFocus() clicks/ puts the cursor in the textfield
+            txtFirstName.requestFocus();
+            txtFirstName.selectAll(); // selects all the text
+        } else if (txtLastName.getText().length() > 50) {
+            JOptionPane.showMessageDialog(this,
+                    "Lastname must be 50 characters or under");
+            txtLastName.requestFocus();
+            txtLastName.selectAll();
+        } else if (txtEmail.getText().length() > 50) {
+            JOptionPane.showMessageDialog(this,
+                    "Email must be 50 characters or under");
+            txtEmail.requestFocus();
+            txtEmail.selectAll();
+        } else if (txtPhoneNumber.getText().length() > 20) {
+            JOptionPane.showMessageDialog(this,
+                    "Phone number must be 20 characters or under");
+            txtPhoneNumber.requestFocus();
+            txtPhoneNumber.selectAll();
         } else {
             /* Call the insert method in the manager class */
-            manager.insert(txtFirstName.getText(), 
-                    txtLastName.getText(), 
-                    txtEmail.getText(), 
-                    txtPhoneNumber.getText());
-            
-            /* Show a message box to say it worked */
-            JOptionPane.showMessageDialog(this, 
-                    txtFirstName.getText() + " " + 
-                    txtLastName.getText() + " was added");
-            
-            /* When a item is added to an arraylist, it goes to
-            the end. So, select all records and click on the 
-            last button and we will see the new entry. */
-            btnSelectAll.doClick();
-            btnLast.doClick();
+            boolean isSuccessful
+                    = manager.insert(txtFirstName.getText(),
+                            txtLastName.getText(),
+                            txtEmail.getText(),
+                            txtPhoneNumber.getText());
+
+            if (isSuccessful) {
+                /* Show a message box to say it worked */
+                JOptionPane.showMessageDialog(this,
+                        txtFirstName.getText() + " "
+                        + txtLastName.getText() + " was added");
+                /* When a item is added to an arraylist, it goes to
+                 the end. So, select all records and click on the
+                 last button and we will see the new entry. */
+                btnSelectAll.doClick();
+                btnLast.doClick();
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Error inserting " + txtFirstName.getText());
+            }
         }
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
         position = listOfData.size() - 1;
-        
+
         populateFields();
     }//GEN-LAST:event_btnLastActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if (txtId.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, 
+            JOptionPane.showMessageDialog(this,
                     "Please select an entry to delete");
         } else {
             boolean isRemoved = manager.delete(
                     Integer.parseInt(txtId.getText()));
             if (isRemoved) {
                 JOptionPane.showMessageDialog(this, "Entry was removed");
+                
+                // populate the arraylist from the manager class
+                listOfData = manager.getAllEntries();
+
+                // If I deleted the last entry, the current position
+                // will now be the same as the list's size, so
+                // move the position back one.
+                if (position == listOfData.size()) {
+                    position--;
+                }
+               
+                populateFields();
+
             } else {
                 JOptionPane.showMessageDialog(this, "Entry not removed");
             }
-            // Get the next position, so to show the next entry
-            // after deleting the current one.
-            int nextPosition = position + 1;
-            // Need error checking here in case at the end.
-            
-            // populate the arraylist from the manager class
-            listOfData = manager.getAllEntries();
-            // Change the position to the next.
-            position = nextPosition;
-            populateFields();            
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+       if (txtId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "ID is empty, please select an entry to update");
+       } 
+       /* Check that none of the textfields are empty */
+       else if (txtFirstName.getText().isEmpty()
+                || txtLastName.getText().isEmpty()
+                || txtEmail.getText().isEmpty()
+                || txtPhoneNumber.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(this,
+                    "You cannot have empty textfields");
+
+        } else if (txtFirstName.getText().length() > 50) {
+            JOptionPane.showMessageDialog(this,
+                    "Firstname must be 50 characters or under");
+            // requestFocus() clicks/ puts the cursor in the textfield
+            txtFirstName.requestFocus();
+            txtFirstName.selectAll(); // selects all the text
+        } else if (txtLastName.getText().length() > 50) {
+            JOptionPane.showMessageDialog(this,
+                    "Lastname must be 50 characters or under");
+            txtLastName.requestFocus();
+            txtLastName.selectAll();
+        } else if (txtEmail.getText().length() > 50) {
+            JOptionPane.showMessageDialog(this,
+                    "Email must be 50 characters or under");
+            txtEmail.requestFocus();
+            txtEmail.selectAll();
+        } else if (txtPhoneNumber.getText().length() > 20) {
+            JOptionPane.showMessageDialog(this,
+                    "Phone number must be 20 characters or under");
+            txtPhoneNumber.requestFocus();
+            txtPhoneNumber.selectAll();
+        } else {
+            boolean isSuccessful = 
+                    manager.update(Integer.parseInt(txtId.getText()), 
+                    txtFirstName.getText(), txtLastName.getText(),
+                    txtEmail.getText(), txtPhoneNumber.getText());
+            
+            if (isSuccessful) {
+                /* Show a message box to say it worked */
+                JOptionPane.showMessageDialog(this,
+                        "Entry updated");
+                listOfData = manager.getAllEntries();
+                populateFields();
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Error inserting " + txtFirstName.getText());
+            }
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -519,7 +614,7 @@ public class AddressBookFrame extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
