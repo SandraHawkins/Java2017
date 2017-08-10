@@ -27,7 +27,7 @@ package chapter1JavaBuildingBlocks;
  * 
  * The real commands to work (run from the src folder):
  * 
- * > javac chapter1JavaBuildingBlocks ClassesVsFiles.java
+ * > javac chapter1JavaBuildingBlocks/ClassesVsFiles.java
  * > javac chapter1JavaBuildingBlocks/Another.java
  * > javac chapter1JavaBuildingBlocks/AndAnother.java
  * 

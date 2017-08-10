@@ -10,7 +10,7 @@ public class ObjectReferencesVsPrimitives {
 
 	public static void main(String[] args) {
 		/* When I say 		int b = a;  
-		 * b will get a copy of the value in b. So a will be 10 and
+		 * b will get a copy of the value in a. So a will be 10 and
 		 * b will also be 10. If I change a to 12, this will have 
 		 * no effect on b. */
 		int a = 10;

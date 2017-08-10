@@ -38,7 +38,7 @@ package chapter1JavaBuildingBlocks;
  * s3 = s1;  // s3 = null;
  * 
  * Answer: after s3 is set to null, then "Hello" will no longer
- * be referene by any reference variables.
+ * be referenced by any reference variables.
  */
 public class GarbageCollectionOne {
 	
