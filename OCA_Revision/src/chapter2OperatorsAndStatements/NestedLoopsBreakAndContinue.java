@@ -77,7 +77,7 @@ public class NestedLoopsBreakAndContinue {
 				
 				System.out.println("Hi");  // Hi Hi Hi Hi Hi
 				continue outer;  // goes to i++
-				// break;  // break would got to the printout after the
+				 //break;  // break would got to the printout after the
 				// inner loop and output 5 * Hi Outer and 1 Good-Bye
 				
 			} // end of inner loop

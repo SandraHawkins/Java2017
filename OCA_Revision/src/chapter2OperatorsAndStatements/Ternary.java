@@ -9,6 +9,10 @@ public class Ternary {
 		double profit = (x >= 80 && x <= 90)? 0.2: x > 90? 0.5: 0;
 		
 		System.out.println(profit);
+		
+		/* Q7 from the book */
+		x = 5;
+		System.out.println(x > 2 ? (((x < 4 ? 10 : 8))) : 7); // 8
 
 	}
 
