@@ -11,7 +11,7 @@ public class CreatingAndUsingStrings {
 	public static void main(String[] args) {
 		
 		String day = "Wednesday";
-		/*day = */day.concat(" 16th August");
+		day = day.concat(" 16th August");
 		System.out.println(day);  	// Wednesday
 		
 		day += " 16th";
