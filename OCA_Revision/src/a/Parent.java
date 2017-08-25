@@ -18,7 +18,7 @@ public class Parent {
 	 * to any class in the same package and via inheritance. I.e.
 	 * this method will be inherited by any class that extends Parent.
 	 * I.e. a child class will get a 'copy & paste' of this method.
-	 * This protected method can only be called in this class, or
+	 * This protected method can only be called in this package, or
 	 * in a Child class that inherits it.  It CANNOT be accessed 
 	 * through an instance of this class in another package. 
 	 */

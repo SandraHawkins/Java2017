@@ -19,7 +19,7 @@ public class PassingPrimitives {
 		int num = 10;  // 10 
 		System.out.println("num before modify() : " + num);	 // 10 	
 		p.modify(num);
-		System.out.println("num before modify() : " + num);  // 10
+		System.out.println("num after modify() : " + num);  // 10
 	}
 	/*
 	 * num in modify is a local variable to the modify() method, 
