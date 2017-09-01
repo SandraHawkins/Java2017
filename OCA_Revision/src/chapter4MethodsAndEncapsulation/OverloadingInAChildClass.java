@@ -50,7 +50,7 @@ public class OverloadingInAChildClass {
 		Animal a1 = new Cat();
 		a.walk();			// Animal
 		c.walk();			// Animal
-		// a.walk("Shep");	// won't compile
+		// a.walk("Shep");	// won't compile  //has no walk method taking a String as a parameter
 		// a1.walk("Shep");	// won't compile
 		c.walk("Shep");		// Cat  
 	}

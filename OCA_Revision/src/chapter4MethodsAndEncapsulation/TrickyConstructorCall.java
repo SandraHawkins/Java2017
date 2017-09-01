@@ -35,7 +35,7 @@ class Child extends Parent {
 	 * You make name static. 
 	 **/
 	Child() {
-		super("");  	 // just to make this class compile :-)
+		super("");  	 // just to make this class compile :-) Calls constructor Parent(String s)
 		//super(name);   // won't compile.
 	}
 }

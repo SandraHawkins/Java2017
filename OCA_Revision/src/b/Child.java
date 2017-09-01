@@ -20,6 +20,11 @@ public class Child extends Parent {
 		//defaultMethod();	// Cannot be seen outside of package a
 		//privateMethod();	// Cannot be seen outside of class Parent
 	}
+	
+	void aMethod() {
+		Child c = new Child();
+		c.protectedMethod();
+	}
 }
 
 class MainInPackageB {
@@ -36,7 +41,7 @@ class MainInPackageB {
 		c.publicMethod();
 		/* The protected method which is in the Parent class is in 
 		 * package 'a' can only be accessed outside of 'a' physically
-		 * inside a Child / subclass through inheritance. See line 19. 
+		 * inside a Child / subclass through inheritance or through an instance (created in the same class, see line 26)See line 19. 
 		 * Cannot be access via a reference to that class outside
 		 * of package 'a'. */
 		//c.protectedMethod();      // *** only visible physically inside

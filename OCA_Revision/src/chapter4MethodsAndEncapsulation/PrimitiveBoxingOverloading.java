@@ -38,6 +38,6 @@ public class PrimitiveBoxingOverloading {
 		long l = 5;			go(l);  //  long
 		float f = 5.0f;		go(f);  //  double
 
-		go(b, b);  // 2 byte wrapper
+		go(b, b);  // 2 byte wrapper/ converts bytes to Bytes by wrapping them
 	}
 }

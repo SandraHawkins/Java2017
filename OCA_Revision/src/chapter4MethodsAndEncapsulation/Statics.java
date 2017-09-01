@@ -10,8 +10,8 @@ package chapter4MethodsAndEncapsulation;
 public class Statics {
 
 	/* Global variables are always given default values. */
-	int memberVariable = 10;
-	static int classVariable = 22;
+	int memberVariable = 10; //belongs to an object
+	static int classVariable = 22; 
 	
 	/* Instance/ non-static methods or constructors can access BOTH static and 
 	 * non-static variables */
@@ -61,7 +61,7 @@ public class Statics {
 	 * 		Statics s = new Statics();
 	 * 		S.o.pln(s.toString());
 	 * 
-	 * and therefore can access member variables (member varaibles) and statics because
+	 * and therefore can access member variables (instance variables) and statics because
 	 * the static variables are shared among all objects. */
 	public String toString() {
 		

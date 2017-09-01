@@ -29,6 +29,8 @@ import static java.lang.Integer.MIN_VALUE; // One variable
 import static java.lang.Integer.valueOf;   // One method
 import static java.lang.Integer.*;	// All static variables and methods
 
+//Integer is in the lang package
+//Integer is the class
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class StaticImports {

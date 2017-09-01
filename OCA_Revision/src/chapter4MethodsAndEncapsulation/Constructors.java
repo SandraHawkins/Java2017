@@ -101,22 +101,23 @@ class Top {
 	}
 	
 	Top() {
-		this("name"); //what is this doing?
+		this("name"); //Calls Top(String s) method
 	}
 	
 	Top(String s) { }
 }
 
 class Bottom extends Top {
-//	Bottom() {
-//		super("");
-//	}
+	Bottom() {
+		super(""); //calls Top(String s) method
+	}
 	
 	/* This is overloading, when you have a method/ constructor with
 	 * the same name but a different parameter list. */
 	Bottom(String name, int num) {
 		//this();
-		super("");  // must be the 1st line in a constructor
+		super("");  // must be the 1st line in a constructor. super("") calls Top(String s)
+				
 	}
 }
 
